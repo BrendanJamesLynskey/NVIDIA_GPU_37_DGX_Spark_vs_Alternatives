@@ -831,7 +831,7 @@
             <tbody>
                 <tr><td><strong>DGX Spark</strong></td><td>128 GB unified</td><td>273 GB/s</td><td>~250</td><td>~500 (dense)</td><td>170 W</td><td>$3&ndash;5 k</td><td>DGX OS (Ubuntu ARM64)</td></tr>
                 <tr><td>Two Sparks paired</td><td>256 GB</td><td>546 GB/s aggregate</td><td>~500</td><td>~1000</td><td>340 W</td><td>$6&ndash;10 k</td><td>DGX OS &times; 2</td></tr>
-                <tr><td>Mac Studio M3 Ultra 192</td><td>192 GB unified</td><td>819 GB/s</td><td>0 (no FP8)</td><td>0</td><td>270 W</td><td>$5&ndash;8 k</td><td>macOS (no CUDA)</td></tr>
+                <tr><td>Mac Studio M3 Ultra</td><td>up to 512 GB unified</td><td>819 GB/s</td><td>0 (no FP8)</td><td>0</td><td>270 W</td><td>$5&ndash;10 k</td><td>macOS (no CUDA)</td></tr>
                 <tr><td>Custom + RTX 5090</td><td>32 GB GDDR7</td><td>1792 GB/s</td><td>~1500</td><td>~3000</td><td>700 W</td><td>$3&ndash;5 k</td><td>Linux/Win, full CUDA</td></tr>
                 <tr><td>Custom + RTX PRO 6000</td><td>96 GB GDDR7 ECC</td><td>1792 GB/s</td><td>~1500</td><td>~3000</td><td>800 W</td><td>$10&ndash;14 k</td><td>Linux/Win, full CUDA</td></tr>
                 <tr><td>DGX Station A100 320</td><td>320 GB HBM2e (4&times; A100)</td><td>4&times; 2 TB/s</td><td>0 (no FP8)</td><td>0</td><td>~1500 W</td><td>$30&ndash;40 k new (~$10 k used)</td><td>DGX OS</td></tr>
@@ -852,7 +852,7 @@
             <h4>Mac Studio wins</h4>
             <ul>
                 <li><strong>3&times; the memory bandwidth</strong> (819 vs 273 GB/s) &mdash; LLM decode is 3&times; faster on equivalent quants.</li>
-                <li>Up to <strong>192 GB</strong> unified memory at top SKU.</li>
+                <li>Up to <strong>512 GB</strong> unified memory at top SKU.</li>
                 <li>macOS as a daily driver: native productivity apps.</li>
                 <li>Acoustic profile (silent under most loads).</li>
                 <li>Single-thread CPU performance is slightly higher.</li>
