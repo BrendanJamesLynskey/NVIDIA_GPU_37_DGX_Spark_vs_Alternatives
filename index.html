@@ -825,17 +825,17 @@
         <table>
             <thead>
                 <tr>
-                    <th>Machine</th><th>Memory</th><th>BW</th><th>FP8 TF</th><th>FP4 TF</th><th>Wall power</th><th>Price band</th><th>OS</th>
+                    <th>Machine</th><th>Memory</th><th>BW</th><th>FP8 TF (dense)</th><th>FP4 TF (dense)</th><th>Wall power</th><th>Price band</th><th>OS</th>
                 </tr>
             </thead>
             <tbody>
                 <tr><td><strong>DGX Spark</strong></td><td>128 GB unified</td><td>273 GB/s</td><td>~250</td><td>~500 (dense)</td><td>170 W</td><td>$3&ndash;5 k</td><td>DGX OS (Ubuntu ARM64)</td></tr>
                 <tr><td>Two Sparks paired</td><td>256 GB</td><td>546 GB/s aggregate</td><td>~500</td><td>~1000</td><td>340 W</td><td>$6&ndash;10 k</td><td>DGX OS &times; 2</td></tr>
                 <tr><td>Mac Studio M3 Ultra</td><td>up to 512 GB unified</td><td>819 GB/s</td><td>0 (no FP8)</td><td>0</td><td>270 W</td><td>$5&ndash;10 k</td><td>macOS (no CUDA)</td></tr>
-                <tr><td>Custom + RTX 5090</td><td>32 GB GDDR7</td><td>1792 GB/s</td><td>~1500</td><td>~3000</td><td>700 W</td><td>$3&ndash;5 k</td><td>Linux/Win, full CUDA</td></tr>
-                <tr><td>Custom + RTX PRO 6000</td><td>96 GB GDDR7 ECC</td><td>1792 GB/s</td><td>~1500</td><td>~3000</td><td>800 W</td><td>$10&ndash;14 k</td><td>Linux/Win, full CUDA</td></tr>
+                <tr><td>Custom + RTX 5090</td><td>32 GB GDDR7</td><td>1792 GB/s</td><td>~420&ndash;840</td><td>~1680</td><td>700 W</td><td>$3&ndash;5 k</td><td>Linux/Win, full CUDA</td></tr>
+                <tr><td>Custom + RTX PRO 6000</td><td>96 GB GDDR7 ECC</td><td>1792 GB/s</td><td>~1000</td><td>~2000</td><td>800 W</td><td>$10&ndash;14 k</td><td>Linux/Win, full CUDA</td></tr>
                 <tr><td>DGX Station A100 320</td><td>320 GB HBM2e (4&times; A100)</td><td>4&times; 2 TB/s</td><td>0 (no FP8)</td><td>0</td><td>~1500 W</td><td>$30&ndash;40 k new (~$10 k used)</td><td>DGX OS</td></tr>
-                <tr><td>Cloud 1&times; H100</td><td>80 GB HBM3</td><td>3.35 TB/s</td><td>1979</td><td>0</td><td>0 (theirs)</td><td>$2&ndash;3 k/mo</td><td>Linux, full CUDA</td></tr>
+                <tr><td>Cloud 1&times; H100</td><td>80 GB HBM3</td><td>3.35 TB/s</td><td>~990</td><td>0</td><td>0 (theirs)</td><td>$2&ndash;3 k/mo</td><td>Linux, full CUDA</td></tr>
                 <tr><td>Cloud 1&times; B200</td><td>192 GB HBM3e</td><td>8 TB/s</td><td>4500</td><td>9000</td><td>0 (theirs)</td><td>$5&ndash;7 k/mo</td><td>Linux, full CUDA</td></tr>
             </tbody>
         </table>
@@ -970,7 +970,7 @@
             <tbody>
                 <tr><td>VRAM</td><td>80 GB HBM3</td><td>128 GB unified</td></tr>
                 <tr><td>BW</td><td>3.35 TB/s</td><td>0.27 TB/s</td></tr>
-                <tr><td>FP8 TF</td><td>1979</td><td>~250</td></tr>
+                <tr><td>FP8 TF (dense)</td><td>~990</td><td>~250</td></tr>
                 <tr><td>Decode 70 B FP8</td><td>~30 tok/s</td><td>~3.5 tok/s</td></tr>
                 <tr><td>Cost for ~10 hrs/week (52 weeks)</td><td>~$1300/year</td><td>$3&ndash;5 k once + ~$80/year power</td></tr>
                 <tr><td>Cost for ~40 hrs/week</td><td>~$5200/year</td><td>same one-time</td></tr>
