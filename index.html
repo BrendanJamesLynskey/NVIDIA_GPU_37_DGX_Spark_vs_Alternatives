@@ -883,7 +883,7 @@
             <h4>RTX 5090 wins</h4>
             <ul>
                 <li><strong>6.5&times; the memory bandwidth</strong> (1792 vs 273 GB/s).</li>
-                <li><strong>~6&times; raw FP8 / FP4 throughput.</strong></li>
+                <li><strong>~2&ndash;3&times; raw FP8 / FP4 throughput</strong> (dense FP4 ~1680 vs ~500 TF).</li>
                 <li>For models that fit in 32 GB &mdash; up to ~13 B BF16 or ~50 B at MX-FP4 &mdash; the 5090 is dramatically faster.</li>
                 <li>x86 host: better Windows support, broader compatibility for niche apps.</li>
                 <li>Easy upgrade path: drop in next year's GPU.</li>
@@ -915,11 +915,11 @@
             <tbody>
                 <tr><td>VRAM</td><td>96 GB GDDR7 ECC</td><td>128 GB unified LPDDR5x</td></tr>
                 <tr><td>Memory BW</td><td>1.79 TB/s</td><td>0.27 TB/s</td></tr>
-                <tr><td>Compute (FP8 dense)</td><td>~1.5 PFLOPS</td><td>~0.25 PFLOPS</td></tr>
+                <tr><td>Compute (FP8 dense)</td><td>~1 PFLOPS</td><td>~0.25 PFLOPS</td></tr>
                 <tr><td>Total system price</td><td>$10&ndash;14 k (GPU $7&ndash;9 k + host $3&ndash;5 k)</td><td>$3&ndash;5 k complete</td></tr>
                 <tr><td>Power under load</td><td>~800 W (GPU 600 + host)</td><td>170 W</td></tr>
                 <tr><td>Datacenter-licensed</td><td>yes</td><td>yes</td></tr>
-                <tr><td>NVLink</td><td>2-card bridge</td><td>200 GbE pairing only</td></tr>
+                <tr><td>NVLink</td><td>none (PCIe only)</td><td>200 GbE pairing only</td></tr>
                 <tr><td>OS choice</td><td>Linux or Windows</td><td>DGX OS (Ubuntu ARM64) only</td></tr>
             </tbody>
         </table>
@@ -1016,17 +1016,17 @@
         <table>
             <thead><tr><th>Setup</th><th>Capex</th><th>Power+space cost (5y)</th><th>Sustained tok/s (70 B MX-FP4)</th><th>$/1M tokens</th></tr></thead>
             <tbody>
-                <tr><td>DGX Spark</td><td>$4 k</td><td>~$700</td><td>~25 (batch 4)</td><td>$0.18</td></tr>
-                <tr><td>Two Sparks</td><td>$8 k</td><td>~$1.4 k</td><td>~36</td><td>$0.27</td></tr>
+                <tr><td>DGX Spark</td><td>$4 k</td><td>~$700</td><td>~25 (batch 4)</td><td>~$1.49</td></tr>
+                <tr><td>Two Sparks</td><td>$8 k</td><td>~$1.4 k</td><td>~36</td><td>~$2.07</td></tr>
                 <tr><td>RTX 5090 PC (no fit at 70 B)</td><td>$4 k</td><td>~$2.5 k</td><td>n/a (OOM)</td><td>n/a</td></tr>
-                <tr><td>RTX PRO 6000 Blackwell PC</td><td>$12 k</td><td>~$2.5 k</td><td>~150</td><td>$0.13</td></tr>
-                <tr><td>Cloud H100 reserved</td><td>$0</td><td>~$22 k/year &times; 5</td><td>~150</td><td>~$3.50 (renting time)</td></tr>
-                <tr><td>Cloud H100 spot</td><td>$0</td><td>~$1/hr</td><td>~150</td><td>~$1.85</td></tr>
+                <tr><td>RTX PRO 6000 Blackwell PC</td><td>$12 k</td><td>~$2.5 k</td><td>~150</td><td>~$0.77</td></tr>
+                <tr><td>Cloud H100 reserved</td><td>$0</td><td>~$22 k/year &times; 5</td><td>~150</td><td>~$5.81 (renting time)</td></tr>
+                <tr><td>Cloud H100 spot</td><td>$0</td><td>~$1/hr</td><td>~150</td><td>~$2.31</td></tr>
             </tbody>
         </table>
     </div>
 
-    <p>Spark's cost-per-token is competitive only at high local utilisation. If you're generating millions of tokens steadily, an RTX PRO 6000 workstation or even cloud spot wins. For mostly-idle workloads, Spark's low power keeps amortisation cheap regardless of utilisation.</p>
+    <p>Spark's cost-per-token is competitive only at high local utilisation. If you're generating millions of tokens steadily, an RTX PRO 6000 workstation wins. For mostly-idle workloads, Spark's low power keeps amortisation cheap regardless of utilisation.</p>
 </section>
 
 <section class="slide" id="slide-10">
